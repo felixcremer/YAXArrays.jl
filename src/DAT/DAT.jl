@@ -215,6 +215,7 @@ end
 import Base.mapslices
 function mapslices(f,d::Union{YAXArray, Dataset},addargs...;dims,kwargs...)
     isa(dims,String) && (dims=(dims,))
+    sleep(10)
     mapCube(f,d,addargs...;indims = InDims(dims...),outdims = OutDims(ByInference()),inplace=false,kwargs...)
 end
 
